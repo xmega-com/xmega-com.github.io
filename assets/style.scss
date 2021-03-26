@@ -1,0 +1,115 @@
+$primaryColor: #64958f;
+$secColor: #ffbb91;
+$thColor: #065c6f;
+$light-color: #faf3dd;
+$dark-color: #393232;
+/*       FONTS        */
+* {
+  font-family: "Noto Serif", serif;
+  font-family: "Open Sans", sans-serif;
+}
+/*       ICONS        */
+
+html {
+  max-width: 100%;
+  min-height: 100vh;
+  margin: 0;
+}
+
+.login-section {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  background: rgb(0, 0, 0);
+  background: linear-gradient(321deg, rgba(0, 0, 0, 1) 0%, rgba(6, 92, 111, 1) 47%, rgba(100, 149, 143, 1) 100%);
+  border-radius: 10px;
+  h1 {
+    text-align: center;
+    color: $secColor;
+    font-family: "Noto Serif", serif;
+    font-weight: 900;
+    padding: 20px 0 20px 0;
+  }
+}
+form {
+  padding: 0 40px;
+  box-sizing: border-box;
+
+  .txt-field {
+    position: relative;
+    border-bottom: 2px solid $secColor;
+    margin: 30px 0;
+
+    input {
+      width: 100%;
+      padding: 0 5px;
+      height: 40px;
+      font-size: 14px;
+      border: none;
+      outline: none;
+      background: none;
+    }
+    label {
+      position: absolute;
+      top: 40%;
+      left: 5px;
+      color: $dark-color;
+      transform: translateY(-50%);
+      font-size: 16px;
+      pointer-events: none;
+      font-weight: 600;
+      transition: 0.5s;
+    }
+    span::before {
+      content: "";
+      position: absolute;
+      top: 40px;
+      left: 0;
+      width: 0%;
+      height: 2px;
+      background: $thColor;
+    }
+    input:focus ~ label,
+    input:valid ~ label {
+      top: -5px;
+      color: $secColor;
+    }
+    input:focus ~ span::before,
+    input:valid ~ span::before {
+      width: 100%;
+    }
+  }
+  .btn-login {
+    padding: 0 20px;
+    background: $secColor;
+    border: 1px solid;
+    width: 100px;
+    font-size: 16px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    font-weight: 700;
+    cursor: pointer;
+    outline: none;
+    &:hover {
+      background-color: $thColor;
+      transition: 0.5s;
+      color: $secColor;
+    }
+  }
+}
+/*       NAVBAR        */
+/*       CONTEN        */
+
+/*       MEDIA SCREEN 450px     */
+
+@media screen and (max-width: 992px) {
+  html {
+    margin: 0;
+  }
+
+  .login-section {
+    width: 250px;
+  }
+}
